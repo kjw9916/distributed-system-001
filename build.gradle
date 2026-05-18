@@ -1,0 +1,29 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+group = 'lab.dist'
+version = '0.1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+application {
+    mainClass = 'lab.dist.app.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
